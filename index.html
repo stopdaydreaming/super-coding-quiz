@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -16,28 +13,41 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <span id="high-scores">view highscores</span>
-        time:<span id="timer"></span>
+        <div class="col-md-6">
+          <span id="high-scores" class="d-flex flex-row">View Highscores</span>
+        </div>
+        <div class="col-md-6">
+          <p class="d-flex flex-row-reverse">Time:<span id="timer"></span></p>
+        </div>
       </div>
 
-      <div class="row">
-        <h1 id="start-title">codinq quiz challenge</h1>
-        <p id="start-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          error fuga rerum eum velit harum sit expedita excepturi explicabo
-          dolore, corporis, corrupti consequuntur aspernatur voluptatem
-          repudiandae! Maiores provident doloribus quo.
-        </p>
-        <button id="start-quiz" class="btn btn-primary">start quiz</button>
+      <div class="row justify-content-md-center">
+        <div id="start-content" class="col-md-6">
+          <h1 class="d-flex justify-content-center">Codinq Quiz Challenge</h1>
+          <p class="text-center">
+            Try to answer the following code-related questions within the time
+            limit. Keep in mind that incorrect answers will penalize your score
+            time by ten seconds!
+          </p>
+          <div class="text-center">
+            <button id="start-quiz" class="btn btn-primary btn-sm justify-content-center"">
+                Start Quiz
+            </button>
+          </div>
+        </div>
       </div>
 
-      <p id="question"></p>
-      <div id="answer"></div>
+      <div class="row justify-content-md-center">
+        <div id="quiz-content" class="col-md-6">
+            <p id="question"></p>
+            <div id="answer"></div>
+        </div>
+      </div>
 
     </div>
     <script src="assets/scripts.js" async defer></script>

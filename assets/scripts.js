@@ -21,8 +21,6 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
-//console.log("hello");
-var startTitle = document.querySelector("#start-title");
 var startContent = document.querySelector("#start-content");
 
 var timer = document.querySelector("#timer");
@@ -32,27 +30,24 @@ var question = document.querySelector("#question");
 var answers = document.querySelector("#answer");
 
 var quiz = {
-    question: "Question",
-    answers: ['ans1', 'ans2', 'ans3'],
+    question: "Commonly used data types DO NOT include:",
+    answers: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
     corrAnswer: 1
 }
 //console.log(quiz);
 
 function startQuiz(){
 
-    startTitle.style.display="none";
     startContent.style.display="none";
-    startBtn.style.display="none";
     
     //start quiz; start loop through array of objects
     var q = document.createElement('p');
     q.textContent = quiz.question;
     question.appendChild(q);
-    // console.log(quiz);
 
     for(var i = 0; i < quiz.answers.length; i++ ) {
         var a = document.createElement('button');
-        a.classList.add('btn', 'btn-info');
+        a.classList.add('btn', 'btn-primary', 'btn-sm');
         a.textContent = quiz.answers[i];
         answers.appendChild(a);
     }
