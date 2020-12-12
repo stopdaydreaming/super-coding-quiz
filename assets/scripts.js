@@ -21,14 +21,14 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
-var startContent = document.querySelector("#start-content");
+var startContentEl = document.querySelector("#start-content");
 
-var timer = document.querySelector("#timer");
-var startBtn = document.querySelector("#start-quiz");
+var timerEl = document.querySelector("#timer");
+var startQuizEl = document.querySelector("#start-quiz");
 
-var question = document.querySelector("#question");
-var answers = document.querySelector("#answer");
-var questionContent = document.querySelector("#quiz-content");
+var questionEl = document.querySelector("#question");
+var answersEl = document.querySelector("#answer");
+var quizContentEl = document.querySelector("#quiz-content");
 
 // OBJECT I WANT TO ITERATE THROUGH
 var currQuestionIndex = 0;
@@ -55,30 +55,27 @@ var quiz = [
     corrAnswer: 1
   }
 ];
+
 function showQuestion(index){
-    for(var i = 0; i < quiz[index].answers.length; i++ ) {
-        var a = document.createElement('button');
-        a.classList.add('btn', 'btn-primary', 'btn-sm');
-        a.textContent = JSON.stringify(quiz[0].answers);
-        answers.appendChild(a);
+    var printQuestion = quiz[index].question;
+    console.log("Question here: " + printQuestion);
+    
+    for ( var i = 0; i < quiz[index].answers.length; i++) {
+      var printAnswer = quiz[index].answers[i];
+      console.log("Answer here: " + printAnswer);
     }
 }
 
 function startQuiz(){
 
-    startContent.classList.add('hide');
-    questionContent.classList.remove('hide');
-    
-    //start quiz; start loop through array of objects
-    var q = document.createElement('p');
-    q.textContent = quiz.question;
-    question.appendChild(q);
-
-    displayQuestion(currQuestionIndex);
+    startContentEl.classList.add('hide');
+    quizContentEl.classList.remove('hide');
+    showQuestion(0);
+    // displayQuestion(currQuestionIndex);
 }
 
 function nextQuestion(){}
 
 function selectAnswer(){}
 
-startBtn.addEventListener("click", startQuiz);
+startQuizEl.addEventListener("click", startQuiz);
