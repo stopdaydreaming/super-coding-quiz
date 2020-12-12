@@ -32,6 +32,7 @@ var quizContentEl = document.querySelector("#quiz-content");
 
 // OBJECT I WANT TO ITERATE THROUGH
 var currQuestionIndex = 0;
+timerEl.textContent = 0;
 
 var quiz = [
   {
@@ -73,7 +74,6 @@ function showQuestion(currQuestionIndex){
 }
 
 function startQuiz(){
-
     startContentEl.classList.add('hide');
     quizContentEl.classList.remove('hide');
     showQuestion(0);
@@ -84,3 +84,4 @@ function nextQuestion(){}
 function selectAnswer(){}
 
 startQuizEl.addEventListener("click", startQuiz);
+// NEED TO FIX: highscores page has this error "scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null" because start quiz doesnt exist here
