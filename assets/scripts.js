@@ -28,33 +28,57 @@ var startBtn = document.querySelector("#start-quiz");
 
 var question = document.querySelector("#question");
 var answers = document.querySelector("#answer");
+var questionContent = document.querySelector("#quiz-content");
 
-var quiz = {
+// OBJECT I WANT TO ITERATE THROUGH
+var currQuestionIndex = 0;
+
+var quiz = [
+  {
     question: "Commonly used data types DO NOT include:",
     answers: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
+    corrAnswer: 2
+  },
+  {
+    question: "The condition in an if/else statement is enclosed within ______",
+    answers: ['1. quotes', '2. curly braces', '3. parenthesis', '4. square brackets'],
+    corrAnswer: 2
+  },
+  {
+    question: "Arrays in JavaScript can be used to store",
+    answers: ['1. numbers and strings', '2. other arrays', '3. booleans', '4. all of the above'],
+    corrAnswer: 3
+  },
+  {
+    question: "String values must be enclosed within _______ when being assigned to variables.",
+    answers: ['1. commas', '2. curly brackets', '3. quotes', '4. parenthesis'],
     corrAnswer: 1
+  }
+];
+function showQuestion(index){
+    for(var i = 0; i < quiz[index].answers.length; i++ ) {
+        var a = document.createElement('button');
+        a.classList.add('btn', 'btn-primary', 'btn-sm');
+        a.textContent = JSON.stringify(quiz[0].answers);
+        answers.appendChild(a);
+    }
 }
-//console.log(quiz);
 
 function startQuiz(){
 
-    startContent.style.display="none";
+    startContent.classList.add('hide');
+    questionContent.classList.remove('hide');
     
     //start quiz; start loop through array of objects
     var q = document.createElement('p');
     q.textContent = quiz.question;
     question.appendChild(q);
 
-    for(var i = 0; i < quiz.answers.length; i++ ) {
-        var a = document.createElement('button');
-        a.classList.add('btn', 'btn-primary', 'btn-sm');
-        a.textContent = quiz.answers[i];
-        answers.appendChild(a);
-    }
+    displayQuestion(currQuestionIndex);
 }
 
-function generateAnswers() {
-    
-}
+function nextQuestion(){}
+
+function selectAnswer(){}
 
 startBtn.addEventListener("click", startQuiz);

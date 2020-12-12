@@ -6,3 +6,6 @@
 #quiz-content {
     margin: 7em 0 0 0;
 }
+.hide {
+    display:none;
+}
