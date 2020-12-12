@@ -56,13 +56,19 @@ var quiz = [
   }
 ];
 
-function showQuestion(index){
-    var printQuestion = quiz[index].question;
+function showQuestion(currQuestionIndex){
+    var printQuestion = quiz[currQuestionIndex].question;
+    questionEl.textContent = printQuestion;
     console.log("Question here: " + printQuestion);
-    
-    for ( var i = 0; i < quiz[index].answers.length; i++) {
-      var printAnswer = quiz[index].answers[i];
-      console.log("Answer here: " + printAnswer);
+
+    for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
+      var a = document.createElement('button');
+      a.classList.add('btn', 'btn-primary', 'btn-sm');
+      a.textContent = quiz[currQuestionIndex].answers[i];
+      console.log(quiz[currQuestionIndex].answers[i]);
+      answersEl.appendChild(a);
+      // event listener for button, which button did i click
+      // if statement, currQuestionIndex++
     }
 }
 
@@ -71,7 +77,6 @@ function startQuiz(){
     startContentEl.classList.add('hide');
     quizContentEl.classList.remove('hide');
     showQuestion(0);
-    // displayQuestion(currQuestionIndex);
 }
 
 function nextQuestion(){}
