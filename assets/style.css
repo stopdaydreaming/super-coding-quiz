@@ -9,6 +9,6 @@
 .hide {
     display:none;
 }
-.link {
+a.link {
     text-decoration: none;
 }

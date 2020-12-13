@@ -2,7 +2,7 @@
 
 ## Description 
 You want to test your super coder knowledge. Test your odds against the ultimate coding quiz.
-The quiz is timed and if you answer wrong, you lose 10 seconds. Add your handle to the leaderboard and try to beat the high score.
+The quiz is timed and if you answer wrong, you lose 10 seconds. Add your initials to the leaderboard and try to beat the high score.
 
 ## Table of Contents
 
