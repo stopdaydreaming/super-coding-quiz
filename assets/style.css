@@ -1,14 +1,32 @@
-/* * {border:solid red 1px;} */
+/* ## TABLE OF CONTENTS ## */
+/* 
+01. IDS
+02. CLASSES 
+*/
 
+/* ## IDs ## */
 #start-content {
     margin: 7em 0 0 0;
 }
 #quiz-content {
     margin: 7em 0 0 0;
 }
+
+/* ## CLASSES ## */
+.btn-purple {
+    color: #fff;
+    background-color: #7952B3;
+    border-color: #7952B3;
+}
+.btn-purple:hover {
+    color: #fff;
+    background-color: #906bc6;
+    border-color: #906bc6;
+}
 .hide {
     display:none;
 }
 a.link {
     text-decoration: none;
+    color: #7952B3;
 }

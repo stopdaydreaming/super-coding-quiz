@@ -68,7 +68,7 @@ function showQuestion(currQuestionIndex){
 
     for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
       var a = document.createElement('button');
-      a.classList.add('btn', 'btn-primary', 'btn-sm', 'mb-1');
+      a.classList.add('btn', 'btn-purple', 'btn-sm', 'mb-1');
       a.textContent = quiz[currQuestionIndex].answers[i];
       answersEl.appendChild(a);
       var br = document.createElement("br");
