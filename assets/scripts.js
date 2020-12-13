@@ -65,14 +65,14 @@ var quiz = [
 function showQuestion(currQuestionIndex){
     var printQuestion = quiz[currQuestionIndex].question;
     questionEl.textContent = printQuestion;
-    console.log("Question here: " + printQuestion);
 
     for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
       var a = document.createElement('button');
-      a.classList.add('btn', 'btn-primary', 'btn-sm');
+      a.classList.add('btn', 'btn-primary', 'btn-sm', 'mb-1');
       a.textContent = quiz[currQuestionIndex].answers[i];
-      console.log(quiz[currQuestionIndex].answers[i]);
       answersEl.appendChild(a);
+      var br = document.createElement("br");
+      answersEl.appendChild(br);
       // event listener for button, which button did i click
       // if statement, currQuestionIndex++
     }
