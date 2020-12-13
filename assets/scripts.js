@@ -33,6 +33,7 @@ var startQuizEl = document.querySelector("#start-quiz");
 var questionEl = document.querySelector("#question");
 var answersEl = document.querySelector("#answer");
 var quizContentEl = document.querySelector("#quiz-content");
+var answerResponseEl = document.querySelector("#answer-response");
 
 // OBJECT I WANT TO ITERATE THROUGH
 var currQuestionIndex = 0;
@@ -80,6 +81,7 @@ function showQuestion(currQuestionIndex){
 function startQuiz(){
     startContentEl.classList.add('hide');
     quizContentEl.classList.remove('hide');
+    answerResponseEl.classList.remove('hide');
     showQuestion(0);
 }
 
