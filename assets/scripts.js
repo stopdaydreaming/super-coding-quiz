@@ -35,7 +35,6 @@ var answersEl = document.querySelector("#answer");
 var quizContentEl = document.querySelector("#quiz-content");
 var answerResponseEl = document.querySelector("#answer-response");
 
-var timerBtn = document.querySelector('#start-timer'); //delete this is temporary, testing timer
 var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
@@ -76,6 +75,9 @@ function showQuestion(currQuestionIndex){
       a.classList.add('btn', 'btn-purple', 'btn-sm', 'mb-1');
       a.textContent = quiz[currQuestionIndex].answers[i];
       answersEl.appendChild(a);
+      // add event listener here
+      a.addEventListener('click', startTimer);
+
       var br = document.createElement("br");
       answersEl.appendChild(br);
       // event listener for button, which button did i click
@@ -97,7 +99,6 @@ function selectAnswer(){}
 function initTimer(){
   clearInterval(interval);
   totalSeconds = 1 * 60;
-  console.log(totalSeconds);
 }
 
 function startTimer() {
@@ -120,6 +121,3 @@ function getSeconds(time) {
 
 startQuizEl.addEventListener("click", startQuiz);
 // NEED TO FIX: highscores page has this error "scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null" because start quiz doesnt exist here
-
-//testing start timer functionality
-timerBtn.addEventListener("click", startTimer);
