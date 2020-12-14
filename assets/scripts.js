@@ -21,7 +21,7 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
-  // go to the highscores page
+  // **go to the highscores page
   // user input initials
   // user can go back or clear scores
 
@@ -33,7 +33,9 @@ var startQuizEl = document.querySelector("#start-quiz");
 var questionEl = document.querySelector("#question");
 var answersEl = document.querySelector("#answer");
 var quizContentEl = document.querySelector("#quiz-content");
-var answerResponseEl = document.querySelector("#answer-response");
+var answerFeedbackEl = document.querySelector("#answer-feedback");
+
+var testBtnEl = document.querySelector("#test-btn");
 
 var totalSeconds = 0;
 var secondsElapsed = 0;
@@ -71,13 +73,15 @@ function showQuestion(currQuestionIndex){
     questionEl.textContent = printQuestion;
 
     for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
+      //create button from object
       var a = document.createElement('button');
       a.classList.add('btn', 'btn-purple', 'btn-sm', 'mb-1');
       a.textContent = quiz[currQuestionIndex].answers[i];
       answersEl.appendChild(a);
-      // add event listener here
       a.addEventListener('click', startTimer);
+    
 
+      // create break between buttons
       var br = document.createElement("br");
       answersEl.appendChild(br);
       // event listener for button, which button did i click
@@ -86,15 +90,24 @@ function showQuestion(currQuestionIndex){
 }
 
 function startQuiz(){
-    startContentEl.classList.add('hide');
-    quizContentEl.classList.remove('hide');
-    answerResponseEl.classList.remove('hide');
-    showQuestion(0);
+  startContentEl.classList.add('hide');
+  quizContentEl.classList.remove('hide');
+  answerFeedbackEl.classList.remove('hide');
+  showQuestion(0);
+}
+
+function endQuiz(){
+  window.open('./highscores.html', '_self');
 }
 
 function nextQuestion(){}
 
-function selectAnswer(){}
+function selectAnswer(){
+// figure out if answer was correct and keep track of it
+// increment the variable that is keeping track of which question we're on
+// call showQuestion and pass in the new variable value we changed in the previous step
+// figure out when the quiz is over and handle it when it ends
+}
 
 function initTimer(){
   clearInterval(interval);
@@ -121,3 +134,5 @@ function getSeconds(time) {
 
 startQuizEl.addEventListener("click", startQuiz);
 // NEED TO FIX: highscores page has this error "scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null" because start quiz doesnt exist here
+
+testBtnEl.addEventListener("click", endQuiz);
