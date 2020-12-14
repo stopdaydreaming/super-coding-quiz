@@ -1,8 +1,8 @@
 // WHEN I click the start button
-  // coding quiz intro hides
+  // **coding quiz intro hides
 // THEN a timer starts and I am presented with a question
-  // first question and answer options display
-  // timer starts countdown
+  // **first question and answer options display
+  // **timer starts countdown
     // how much time does the user have to complete the quiz?
 // WHEN I answer a question
 // THEN I am presented with another question
@@ -34,6 +34,11 @@ var questionEl = document.querySelector("#question");
 var answersEl = document.querySelector("#answer");
 var quizContentEl = document.querySelector("#quiz-content");
 var answerResponseEl = document.querySelector("#answer-response");
+
+var timerBtn = document.querySelector('#start-timer'); //delete this is temporary, testing timer
+var totalSeconds = 0;
+var secondsElapsed = 0;
+var interval;
 
 // OBJECT I WANT TO ITERATE THROUGH
 var currQuestionIndex = 0;
@@ -89,5 +94,32 @@ function nextQuestion(){}
 
 function selectAnswer(){}
 
+function initTimer(){
+  clearInterval(interval);
+  totalSeconds = 1 * 60;
+  console.log(totalSeconds);
+}
+
+function startTimer() {
+  if(secondsElapsed === 0) {
+    initTimer();
+  }
+  interval = setInterval(function() {
+    if(totalSeconds > 0) {
+      totalSeconds--;
+      secondsElapsed++;
+      timerEl.textContent = getSeconds(totalSeconds);
+    }
+  }, 1000);
+}
+
+function getSeconds(time) {
+  var seconds = time % 60;
+  return seconds;
+}
+
 startQuizEl.addEventListener("click", startQuiz);
 // NEED TO FIX: highscores page has this error "scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null" because start quiz doesnt exist here
+
+//testing start timer functionality
+timerBtn.addEventListener("click", startTimer);
