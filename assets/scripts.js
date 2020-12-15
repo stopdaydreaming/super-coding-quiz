@@ -4,26 +4,26 @@
   // **first question and answer options display
   // **timer starts countdown
     // how much time does the user have to complete the quiz?
-// WHEN I answer a question
-// THEN I am presented with another question
+// **WHEN I answer a question
+// **THEN I am presented with another question
 // WHEN I answer a question incorrectly
 // THEN time is subtracted from the clock
-  // check for the answer chosen
-  // is the answer correct?
-    // TRUE 
+  // **check for the answer chosen
+  // **is the answer correct?
+    // **TRUE 
       // display "correct" status message
-      // go to next question
+      // **go to next question
     // FALSE 
-      // display "wrong" status message
+      //display "wrong" status message
       //subtract 10 from timer countdown and got to next question
-      // go to next question
+      //**go to next question
 // WHEN all questions are answered or the timer reaches 0
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
-  // **go to the highscores page
-  // user input initials
-  // user can go back or clear scores
+  //**go to the highscores page
+  //**user input initials
+  //**user can go back or clear scores
 
 var startContentEl = document.querySelector('#start-content');
 
@@ -35,7 +35,8 @@ var answersEl = document.querySelector('#answer');
 var quizContentEl = document.querySelector('#quiz-content');
 var answerFeedbackEl = document.querySelector('#answer-feedback');
 
-var testBtnEl = document.querySelector('#test-btn');
+var correctEl = document.querySelector('#correct');
+var wrongEl = document.querySelector('#wrong');
 
 var totalSeconds = 0;
 var secondsElapsed = 0;
@@ -54,17 +55,17 @@ var quiz = [
   {
     question: 'The condition in an if/else statement is enclosed within ______',
     answers: ['1. quotes', '2. curly braces', '3. parenthesis', '4. square brackets'],
-    corrAnswer: 2
+    corrAnswer: '2. curly braces'
   },
   {
     question: 'Arrays in JavaScript can be used to store',
     answers: ['1. numbers and strings', '2. other arrays', '3. booleans', '4. all of the above'],
-    corrAnswer: 3
+    corrAnswer: '3. booleans'
   },
   {
     question: 'String values must be enclosed within _______ when being assigned to variables.',
     answers: ['1. commas', '2. curly brackets', '3. quotes', '4. parenthesis'],
-    corrAnswer: 1
+    corrAnswer: '1. commas'
   }
 ];
 
@@ -90,31 +91,42 @@ function startQuiz(){
   quizContentEl.classList.remove('hide');
   answerFeedbackEl.classList.remove('hide');
   showQuestion(0);
+
+  // show game over if timer = 0
+  if(timerEl.textContent === 0){
+    console.log('game over');
+  }
+  else {
+    console.log('not over');
+  }
 }
 
 function endQuiz(){
   window.open('./highscores.html', '_self');
 }
 
-function nextQuestion(){}
-
-function checkAnswer(answer){
-
-  var btnContent = event.target.textContent;
-  var correctAnswer = quiz[currQuestionIndex].corrAnswer;
-  if(btnContent === correctAnswer) {
+function checkAnswer(){
+  var x = event.target.textContent;
+  var y = quiz[currQuestionIndex].corrAnswer;
+  
+  if(x == y){
+    //show #correct 
+    wrongEl.classList.add('hide');
+    correctEl.classList.remove('hide');
+    console.log(y);
     console.log('correct');
-    // loop to next question
-    // quiz[currQuestionIndex]++;
   }
   else {
-    console.log('incorrect');
-    // loop to next question
-    // subtract 10 seconds from timer
-    // timerEl = timerEl - 10;
+    correctEl.classList.add('hide');
+    wrongEl.classList.remove('hide');
+    console.log(x);
+    console.log('wrong');
   }
-currQuestionIndex++;
-showQuestion();
+}
+
+function nextQuestion(answer){
+  currQuestionIndex++;
+  showQuestion();
 }
 
 function initTimer(){
@@ -133,7 +145,8 @@ function startTimer() {
       timerEl.textContent = getSeconds(totalSeconds);
     }
   }, 1000);
-  answersEl.addEventListener("click", checkAnswer)
+  checkAnswer();
+  answersEl.addEventListener("click", nextQuestion);
 }
 
 function getSeconds(time) {
