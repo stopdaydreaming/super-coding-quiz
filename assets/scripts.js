@@ -68,10 +68,10 @@ var quiz = [
   }
 ];
 
-function showQuestion(currQuestionIndex){
+function showQuestion(){
     var printQuestion = quiz[currQuestionIndex].question;
     questionEl.textContent = printQuestion;
-
+    answersEl.innerHTML = '';
     for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
       //create button from object
       var a = document.createElement('button');
@@ -105,6 +105,7 @@ function checkAnswer(answer){
   if(btnContent === correctAnswer) {
     console.log('correct');
     // loop to next question
+    // quiz[currQuestionIndex]++;
   }
   else {
     console.log('incorrect');
@@ -112,7 +113,8 @@ function checkAnswer(answer){
     // subtract 10 seconds from timer
     // timerEl = timerEl - 10;
   }
-
+currQuestionIndex++;
+showQuestion();
 }
 
 function initTimer(){
