@@ -101,16 +101,18 @@ function endQuiz(){
 function nextQuestion(){}
 
 function checkAnswer(answer){
-  // console.log(answer);
-  var x = event.target.textContent;
-  var y = quiz[currQuestionIndex].corrAnswer;
-  console.log('x: ' + x);
-  console.log('y: ' + y);
-  if(x === y) {
+
+  var btnContent = event.target.textContent;
+  var correctAnswer = quiz[currQuestionIndex].corrAnswer;
+  if(btnContent === correctAnswer) {
     console.log('correct');
+    // loop to next question
   }
   else {
     console.log('incorrect');
+    // loop to next question
+    // subtract 10 seconds from timer
+    // timerEl = timerEl - 10;
   }
 
 }
