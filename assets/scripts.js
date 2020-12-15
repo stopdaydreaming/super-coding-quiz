@@ -79,26 +79,20 @@ function showQuestion(){
       a.classList.add('btn', 'btn-purple', 'btn-sm', 'mb-1');
       a.textContent = quiz[currQuestionIndex].answers[i];
       answersEl.appendChild(a);
-      a.addEventListener('click', startTimer);
+      a.addEventListener('click', checkAnswer);
       // create break between buttons
       var br = document.createElement('br');
       answersEl.appendChild(br);
     }
+    correctEl.classList.add('hide');
+    wrongEl.classList.add('hide');
 }
 
 function startQuiz(){
   startContentEl.classList.add('hide');
   quizContentEl.classList.remove('hide');
-  answerFeedbackEl.classList.remove('hide');
+  startTimer();
   showQuestion(0);
-
-  // show game over if timer = 0
-  if(timerEl.textContent === 0){
-    console.log('game over');
-  }
-  else {
-    console.log('not over');
-  }
 }
 
 function endQuiz(){
@@ -108,25 +102,29 @@ function endQuiz(){
 function checkAnswer(){
   var x = event.target.textContent;
   var y = quiz[currQuestionIndex].corrAnswer;
-  
+  answerFeedbackEl.classList.remove('hide');
   if(x == y){
-    //show #correct 
+    // correct answer feedback
     wrongEl.classList.add('hide');
     correctEl.classList.remove('hide');
-    console.log(y);
-    console.log('correct');
   }
   else {
+    //wrong answer feedback
     correctEl.classList.add('hide');
     wrongEl.classList.remove('hide');
-    console.log(x);
-    console.log('wrong');
+    totalSeconds = totalSeconds - 10;
+    //totalSeconds -= 10; //condensed
   }
+
 }
 
 function nextQuestion(answer){
-  currQuestionIndex++;
-  showQuestion();
+  if(currQuestionIndex >= (quiz.length)-1){
+    endQuiz();
+  } else {
+    currQuestionIndex++;
+    setTimeout(showQuestion, 1000);
+  }
 }
 
 function initTimer(){
@@ -135,17 +133,13 @@ function initTimer(){
 }
 
 function startTimer() {
-  if(secondsElapsed === 0) {
-    initTimer();
-  }
+  initTimer();
   interval = setInterval(function() {
-    if(totalSeconds > 0) {
+    if(totalSeconds > 0) {   
       totalSeconds--;
-      secondsElapsed++;
       timerEl.textContent = getSeconds(totalSeconds);
     }
   }, 1000);
-  checkAnswer();
   answersEl.addEventListener("click", nextQuestion);
 }
 
@@ -155,4 +149,3 @@ function getSeconds(time) {
 }
 
 startQuizEl.addEventListener('click', startQuiz);
-// NEED TO FIX: highscores page has this error 'scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null' because start quiz doesn't exist here
