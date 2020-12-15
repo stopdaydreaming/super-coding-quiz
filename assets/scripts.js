@@ -49,7 +49,7 @@ var quiz = [
   {
     question: 'Commonly used data types DO NOT include:',
     answers: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
-    corrAnswer: 2
+    corrAnswer: '2. booleans'
   },
   {
     question: 'The condition in an if/else statement is enclosed within ______',
@@ -101,13 +101,18 @@ function endQuiz(){
 function nextQuestion(){}
 
 function checkAnswer(answer){
-  if(answer === quiz[currQuestionIndex].corrAnswer){
+  // console.log(answer);
+  var x = event.target.textContent;
+  var y = quiz[currQuestionIndex].corrAnswer;
+  console.log('x: ' + x);
+  console.log('y: ' + y);
+  if(x === y) {
+    console.log('correct');
+  }
+  else {
+    console.log('incorrect');
+  }
 
-    console.log("correct answer");
-  }
-  else{
-    console.log("wrong answer");
-  }
 }
 
 function initTimer(){
