@@ -49,7 +49,7 @@ var quiz = [
   {
     question: 'Commonly used data types DO NOT include:',
     answers: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
-    corrAnswer: '2. booleans'
+    corrAnswer: 2
   },
   {
     question: 'The condition in an if/else statement is enclosed within ______',
@@ -100,29 +100,14 @@ function endQuiz(){
 
 function nextQuestion(){}
 
-function selectAnswer(){
-  // console.log('select answer');
-  for(var i = 0; i < quiz[currQuestionIndex].answers.length; i++ ) {
-      // LOGS CORRECT VALUES
-      var x = quiz[currQuestionIndex].answers[i];
-      var y = quiz[currQuestionIndex].corrAnswer;
-      console.log('all answers: ' + x);
-      console.log('correct answer: ' + y);
+function checkAnswer(answer){
+  if(answer === quiz[currQuestionIndex].corrAnswer){
 
-    // var answer = quiz[currQuestionIndex].answers[i];
-    // var correctAnswer = quiz[currQuestionIndex].corrAnswer;
-    // if( answer === correctAnswer){
-    //     console.log("correct answer");
-    // }
-    // else {
-    //   console.log("incorrect");
-    // }
+    console.log("correct answer");
   }
-// figure out if answer was correct and keep track of it
-
-// increment the variable that is keeping track of which question we're on
-// call showQuestion and pass in the new variable value we changed in the previous step
-// figure out when the quiz is over and handle it when it ends
+  else{
+    console.log("wrong answer");
+  }
 }
 
 function initTimer(){
@@ -141,7 +126,7 @@ function startTimer() {
       timerEl.textContent = getSeconds(totalSeconds);
     }
   }, 1000);
-  answersEl.addEventListener("click", selectAnswer)
+  answersEl.addEventListener("click", checkAnswer)
 }
 
 function getSeconds(time) {
