@@ -82,8 +82,6 @@ function showQuestion(currQuestionIndex){
       // create break between buttons
       var br = document.createElement('br');
       answersEl.appendChild(br);
-      // event listener for button, which button did i click
-      // if statement, currQuestionIndex++
     }
 }
 
@@ -142,6 +140,4 @@ function getSeconds(time) {
 }
 
 startQuizEl.addEventListener('click', startQuiz);
-// NEED TO FIX: highscores page has this error 'scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null' because start quiz doesnt exist here
-
-// testBtnEl.addEventListener('click', endQuiz);
+// NEED TO FIX: highscores page has this error 'scripts.js:86 Uncaught TypeError: Cannot read property 'addEventListener' of null' because start quiz doesn't exist here
