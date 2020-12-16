@@ -37,6 +37,13 @@ function submit() {
     scoreboardEl.classList.remove('hide');
     goBackBtnEl.classList.remove('hide');
     clearScoresBtnEl.classList.remove('hide');
+
+    getInitials();
+}
+
+function getInitials() {
+    var user = hsInitialsEl.value;
+    user.textContent = scoreboardEl;
 }
 
 function clearScores(){
