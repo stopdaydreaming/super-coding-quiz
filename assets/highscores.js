@@ -12,10 +12,18 @@
 //   //append to page
 //   highScoresList.append(pEl);
 // }
+
 var topBarEl = document.querySelector("#top-bar");
+var hsInitialsEl = document.querySelector("#hs-initials");
 var submitBtnEl = document.querySelector("#submit-btn");
+var scoreboardEl = document.querySelector("#score-board");
+var goBackBtnEl = document.querySelector("#go-back");
+var clearScoresBtnEl = document.querySelector("#clear-scores");
 
 function submit() {
     topBarEl.classList.add('hide');
+    hsInitialsEl.classList.add('hide');
+    submitBtnEl.classList.add('hide');
 }
+
 submitBtnEl.addEventListener("click", submit) ;
