@@ -33,11 +33,10 @@ a.link {
 .alert-purple {
     position: relative;
     padding: 1rem 1rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-    width: 10em;
+    width: 100%;
     color: #906bc6;
-    background-color: #cfe2ff;
-    border-color: #b6d4fe;
+    background-color: lavender;
+    border-color: #906bc6;
 }
