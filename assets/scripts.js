@@ -1,29 +1,4 @@
-// WHEN I click the start button
-  // **coding quiz intro hides
-// THEN a timer starts and I am presented with a question
-  // **first question and answer options display
-  // **timer starts countdown
-    // how much time does the user have to complete the quiz?
-// **WHEN I answer a question
-// **THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-  // **check for the answer chosen
-  // **is the answer correct?
-    // **TRUE 
-      // display "correct" status message
-      // **go to next question
-    // FALSE 
-      //display "wrong" status message
-      //subtract 10 from timer countdown and got to next question
-      //**go to next question
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
-  //**go to the highscores page
-  //**user input initials
-  //**user can go back or clear scores
+// super coding quiz
 
 var startContentEl = document.querySelector('#start-content');
 

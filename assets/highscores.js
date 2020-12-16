@@ -1,4 +1,11 @@
 // ### HIGHSCORES PAGE ###
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and score
+  //**go to the highscores page
+  //**user input initials
+  //**user can go back or clear scores
 
 // console.log("welcome to high scores");
 // var initialsAndScore = JSON.parse(localStorage.getItem("initials and score"));
