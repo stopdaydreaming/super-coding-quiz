@@ -80,10 +80,10 @@ function endQuiz(){
 }
 
 function checkAnswer(){
-  var x = event.target.textContent;
-  var y = quiz[currQuestionIndex].corrAnswer;
+  var txtContent = event.target.textContent;
+  var corrAns = quiz[currQuestionIndex].corrAnswer;
   answerFeedbackEl.classList.remove('hide');
-  if(x == y){
+  if(txtContent == corrAns){
     // correct answer feedback
     wrongEl.classList.add('hide');
     correctEl.classList.remove('hide');
