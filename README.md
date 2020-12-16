@@ -50,10 +50,10 @@ None at this time
 None at this time  
 
 ## Badges
-<!-- ![badmath](https://img.shields.io/github/issues/stopdaydreaming/password-generator)  
-![badmath](https://img.shields.io/github/forks/stopdaydreaming/password-generator)  
-![badmath](https://img.shields.io/github/stars/stopdaydreaming/password-generator)  
-![badmath](https://img.shields.io/badge/license-MIT-green)  
-![badmath](https://img.shields.io/badge/HTML-20.5%25-green)  
-![badmath](https://img.shields.io/badge/CSS-32.7%25-blue)  
-![badmath](https://img.shields.io/badge/JS-46.8%25-red)  -->
+![badmath](https://img.shields.io/github/issues/stopdaydreaming/super-coding-quiz)  
+![badmath](https://img.shields.io/github/forks/stopdaydreaming/super-coding-quiz)  
+![badmath](https://img.shields.io/github/stars/stopdaydreaming/super-coding-quiz)  
+![badmath](https://img.shields.io/github/license/stopdaydreaming/super-coding-quiz)  
+![badmath](https://img.shields.io/badge/JS-47.6%25-yellow)   
+![badmath](https://img.shields.io/badge/HTML-46.1%25-red)  
+![badmath](https://img.shields.io/badge/CSS-6.3%25-purple)  
