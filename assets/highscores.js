@@ -42,8 +42,10 @@ function submit() {
 }
 
 function getInitials() {
-    var user = hsInitialsEl.value;
-    user.textContent = scoreboardEl;
+    var initials = document.querySelector("#hs-initials").value;
+    localStorage.setItem('initials', initials);
+    var storedInitials = localStorage.getItem("initials");
+    scoreboardEl.textContent = storedInitials;
 }
 
 function clearScores(){
