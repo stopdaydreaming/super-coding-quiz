@@ -1,11 +1,4 @@
-// ### HIGHSCORES PAGE ###
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
-  //**go to the highscores page
-  //**user input initials
-  //**user can go back or clear scores
+// High scores 
 
 var topBarEl = document.querySelector("#top-bar");
 var hsInitialsEl = document.querySelector("#hs-initials");
