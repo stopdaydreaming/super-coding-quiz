@@ -19,6 +19,7 @@ var submitBtnEl = document.querySelector("#submit-btn");
 var scoreboardEl = document.querySelector("#score-board");
 var goBackBtnEl = document.querySelector("#go-back");
 var clearScoresBtnEl = document.querySelector("#clear-scores");
+var playerInitialsEl = document.querySelector("#player-initials");
 
 function submit() {
     // hide user input
@@ -31,4 +32,9 @@ function submit() {
     clearScoresBtnEl.classList.remove('hide');
 }
 
+function clearScores(){
+    scoreboardEl.textContent = '';
+}
+
 submitBtnEl.addEventListener("click", submit) ;
+clearScoresBtnEl.addEventListener("click", clearScores);
