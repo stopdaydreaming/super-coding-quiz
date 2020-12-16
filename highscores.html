@@ -18,7 +18,7 @@
   <body>
     <div class="container">
 
-      <div class="row mt-3">
+      <div class="row mt-3" id="top-bar">
         <div class="col-md-6">
           <a id="high-scores" class="d-flex flex-row link" href="./highscores.html">View Highscores</a>
         </div>
@@ -36,13 +36,21 @@
             <input 
             type="text" 
             class="alert alert-purple mt-3 mb-3" 
-            placeholder="Highscores go here">
-            <button class="btn btn-purple btn-sm ">submit</button>
+            placeholder="Highscores go here"
+            required>
+            <button 
+              class="btn btn-purple btn-sm"
+              id="submit-btn"
+              >
+              submit
+            </button>
           </div>
           <hr>
           <!-- scoreboard -->
           <div class="text-center">
-            <div class="alert alert-primary mt-3 mb-3" role="alert">Highscores go here</div>
+            <div class="alert alert-primary mt-3 mb-3" role="alert">
+              <p>MXM</p>
+            </div>
             <a id="go-back"
                 href="./index.html" 
                 class="btn btn-purple btn-sm justify-content-center" 
@@ -60,6 +68,6 @@
       </div>
 
     </div>
-    <script src="assets/scripts.js" async defer></script>
+    <script src="assets/highscores.js" async defer></script>
   </body>
 </html>
