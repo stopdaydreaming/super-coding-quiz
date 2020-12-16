@@ -7,19 +7,6 @@
   //**user input initials
   //**user can go back or clear scores
 
-// console.log("welcome to high scores");
-// var initialsAndScore = JSON.parse(localStorage.getItem("initials and score"));
-// for(var i =0; i<initialsAndScore.length; i++){
-//   //create an element
-//   var pEl = document.createElement("p");
-//   //give it content
-//   // pEl.textContent = initialsAndScore[i].name;
-//   // pEl.textContent = initialsAndScore[i].points;
-//   pEl.textContent = initialsAndScore[i].name + initialsAndScore[i].points;
-//   //append to page
-//   highScoresList.append(pEl);
-// }
-
 var topBarEl = document.querySelector("#top-bar");
 var hsInitialsEl = document.querySelector("#hs-initials");
 var submitBtnEl = document.querySelector("#submit-btn");
@@ -46,6 +33,12 @@ function getInitials() {
     localStorage.setItem('initials', initials);
     var storedInitials = localStorage.getItem("initials");
     scoreboardEl.textContent = storedInitials;
+    
+    for(var i = 0; i < initials.length; i++){
+        var pEl = document.createElement("p");
+        pEl.textContent = initials;
+        // scoreboardEl.append(pEl);
+    }
 }
 
 function clearScores(){
