@@ -21,9 +21,14 @@ var goBackBtnEl = document.querySelector("#go-back");
 var clearScoresBtnEl = document.querySelector("#clear-scores");
 
 function submit() {
+    // hide user input
     topBarEl.classList.add('hide');
     hsInitialsEl.classList.add('hide');
     submitBtnEl.classList.add('hide');
+
+    scoreboardEl.classList.remove('hide');
+    goBackBtnEl.classList.remove('hide');
+    clearScoresBtnEl.classList.remove('hide');
 }
 
 submitBtnEl.addEventListener("click", submit) ;

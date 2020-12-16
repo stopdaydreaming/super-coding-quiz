@@ -23,7 +23,7 @@
           <a id="high-scores" class="d-flex flex-row link" href="./highscores.html">View Highscores</a>
         </div>
         <div class="col-md-6 d-flex flex-row-reverse">
-          <p class="">Time: <span id="timer"></span></p>
+          <p class="">Time: <span id="timer">0</span></p>
         </div>
       </div>
 
@@ -46,24 +46,23 @@
               submit
             </button>
           </div>
-          <hr>
           <div class="text-center">
             <div 
               id="score-board"
-              class="alert alert-primary mt-3 mb-3" 
+              class="alert alert-primary mt-3 mb-3 hide" 
               role="alert">
               <p>MXM</p>
             </div>
             <a id="go-back"
                 href="./index.html" 
-                class="btn btn-purple btn-sm justify-content-center" 
+                class="btn btn-purple btn-sm justify-content-center hide" 
                 role="button" 
                 aria-pressed="true">
                 Go Back
             </a>
             <button 
                 id="clear-scores" 
-                class="btn btn-purple btn-sm justify-content-center">
+                class="btn btn-purple btn-sm justify-content-center hide">
                 Clear Highscores
             </button>
           </div>
